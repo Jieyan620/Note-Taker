@@ -8,9 +8,9 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/notes', (req, res) => {
-  fs.readFile('./db/db.json', 'utf8', (err, note) => {
+  fs.readFile('./db/db.json', 'utf8', (err, notes) => {
     if (err) { console.log(err) }
-    res.json(JSON.parse(note))
+    res.json(JSON.parse(notes))
   })
 })
 
